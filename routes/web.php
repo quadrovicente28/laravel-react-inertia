@@ -15,7 +15,7 @@ Route::redirect('/', '/dashboard');
 Route::middleware(['auth', 'verified'])->group(function(){ // group method allows me to apply the middleware to all routes
     Route::get('/dashboard', fn () => Inertia::render('Dashboard'))->name('dashboard'); 
 
-    Route::resource('project', ProjectController::class);
+    Route::resource('project', ProjectController::class); //It provides a convenient way to create resourceful routes and map them to controller actions.
     Route::resource('task', TaskController::class);
     Route::resource('user', UserController::class);
 });
